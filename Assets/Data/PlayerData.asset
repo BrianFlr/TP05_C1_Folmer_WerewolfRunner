@@ -17,5 +17,4 @@ MonoBehaviour:
   moveLeft: 97
   health: 3
   speed: 4
-  jumpForce: 6
-  jumpLimit: 4
+  jumpSpeed: 8
