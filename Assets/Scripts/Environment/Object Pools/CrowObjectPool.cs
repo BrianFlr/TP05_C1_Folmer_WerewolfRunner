@@ -1,26 +1,18 @@
 using System.Collections.Generic;
-using System.ComponentModel.Design.Serialization;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class ObstaclesPool : MonoBehaviour
+public class CrowObjectPool : MonoBehaviour
 {
-    [Header ("Pool Containers")]
+    [Header ("Pool Container")]
     [SerializeField] Transform crowPoolContainer;
-    [SerializeField] Transform skullPoolContainer;
-    [SerializeField] Transform toadPoolContainer;
 
-    [Header("Pool Prefabs")]
+    [Header("Pool Prefab")]
     [SerializeField] GameObject crowPrefab;
-    [SerializeField] GameObject skullPrefab;
-    [SerializeField] GameObject toadPrefab;
 
     [SerializeField] private float minimumAmount = 5f;
 
     // Creo una lista de GameObjects
     private List<GameObject> crowPool = new List<GameObject>();
-    private List<GameObject> skullPool = new List<GameObject>();
-    private List<GameObject> toadPool = new List<GameObject>();
 
     void Start()
     {
@@ -28,8 +20,6 @@ public class ObstaclesPool : MonoBehaviour
         for (int i = 0; i < minimumAmount; i++)
         {
             CreateNewObjectCrow();
-            CreateNewObjectSkull();
-            CreateNewObjectToad();
         }
     }
 
@@ -49,36 +39,7 @@ public class ObstaclesPool : MonoBehaviour
         return obj;
     }
 
-    GameObject CreateNewObjectSkull()
-    {
-        // Instancio el prefab del cuervo y lo guardo en su respectivo objeto padre
-        GameObject obj = Instantiate(skullPrefab, skullPoolContainer);
-
-        // Añado el objeto creado a la lista
-        skullPool.Add(obj);
-
-        // Desactivo el objeto
-        obj.SetActive(false);
-
-        // Devuelvo el objeto
-        return obj;
-    }
-
-    GameObject CreateNewObjectToad()
-    {
-        // Instancio el prefab del cuervo y lo guardo en su respectivo objeto padre
-        GameObject obj = Instantiate(toadPrefab, toadPoolContainer);
-
-        // Añado el objeto creado a la lista
-        toadPool.Add(obj);
-
-        // Desactivo el objeto
-        obj.SetActive(false);
-
-        // Devuelvo el objeto
-        return obj;
-    }
-
+    // Funciones para utilizar los objetos creados en las pools
     public GameObject GetObjectCrow()
     {
         // Busco en mi lista un objeto desactivado de la lista (Del pool)
@@ -90,6 +51,9 @@ public class ObstaclesPool : MonoBehaviour
             // Creo un nuevo objeto
             CreateNewObjectCrow();
         }
+
+        // Activo el objeto seleccionado de la lista (Del pool)
+        obj.SetActive(true);
 
         // Devuelvo el objeto
         return obj;
