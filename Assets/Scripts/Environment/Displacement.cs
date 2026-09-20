@@ -4,11 +4,6 @@ public class Displacement : MonoBehaviour
 {
     private float displacementSpeed = 0f;
 
-    private void Start()
-    {
-        
-    }
-
     void Update()
     {
         // Consulto constantemente la velocidad a la que debe desplazarse
