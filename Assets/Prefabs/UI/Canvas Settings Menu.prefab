@@ -521,9 +521,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3452709032903083823}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75b7fcf16bdb2ed428200784aae5fff9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5473515694ee13f4cacd5f58badca6f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UiBackButton
+  activeCanvas: {fileID: 7063405415869429554}
+  returnCanvas: {fileID: 0}
+  btnBack: {fileID: 4471275296649249066}
 --- !u!223 &8926918491716315326
 Canvas:
   m_ObjectHideFlags: 0

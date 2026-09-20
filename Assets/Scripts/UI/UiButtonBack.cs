@@ -1,16 +1,29 @@
 using UnityEngine;
+using UnityEngine.UI;
 
-public class UiBackButton : MonoBehaviour
+public class UiButtonBack : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [Header("Canvas")]
+    [SerializeField] private GameObject activeCanvas;
+    [SerializeField] private GameObject returnCanvas;
+
+    [Header("Buttons")]
+    [SerializeField] private Button btnBack;
+
+    private void Awake()
     {
-        
+        btnBack.onClick.AddListener(OnBackClicked);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy()
     {
-        
+        btnBack.onClick.RemoveAllListeners();
+    }
+
+    // Eventos de botones.
+    private void OnBackClicked()
+    {
+        activeCanvas.SetActive(false);
+        returnCanvas.SetActive(true);
     }
 }
