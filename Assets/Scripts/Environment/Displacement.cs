@@ -2,13 +2,11 @@ using UnityEngine;
 
 public class Displacement : MonoBehaviour
 {
-    [SerializeField] private GameplayDataSo data;
-
     private float displacementSpeed = 0f;
 
     private void Start()
     {
-        displacementSpeed = data.displacementSpeed;
+        displacementSpeed = GameManager.Instance.GetDisplacementSpeed();
     }
 
     void Update()

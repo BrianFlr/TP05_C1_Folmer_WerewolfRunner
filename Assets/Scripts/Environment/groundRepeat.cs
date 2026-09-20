@@ -12,7 +12,7 @@ public class groundRepeat : MonoBehaviour
 
     private void Start()
     {
-        groundWidth = groundCollider.size.x;
+        groundWidth = groundCollider.bounds.size.x;
     }
 
     void Update()
@@ -21,7 +21,7 @@ public class groundRepeat : MonoBehaviour
         if (transform.position.x < -groundWidth)
         {
             // Modifico la posicion del suelo y lo teletransporto delante del actual
-            transform.Translate(Vector2.left * 2f * groundWidth);
+            transform.Translate(Vector2.right * 2f * groundWidth);
         }
     }
 }
