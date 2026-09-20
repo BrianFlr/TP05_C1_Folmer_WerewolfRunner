@@ -2100,7 +2100,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3000120413287763859, guid: ea2dfbe293f5fd447b609f3079edbf24, type: 3}
       propertyPath: m_Name
-      value: Floor_1
+      value: Floor1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2737,7 +2737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1719551301809441699, guid: ea2dfbe293f5fd447b609f3079edbf24, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.92
+      value: -17.88
       objectReference: {fileID: 0}
     - target: {fileID: 1719551301809441699, guid: ea2dfbe293f5fd447b609f3079edbf24, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2782,6 +2782,10 @@ PrefabInstance:
     - target: {fileID: 3000120413287763859, guid: ea2dfbe293f5fd447b609f3079edbf24, type: 3}
       propertyPath: m_Name
       value: Floor_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6411657958394106538, guid: ea2dfbe293f5fd447b609f3079edbf24, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
