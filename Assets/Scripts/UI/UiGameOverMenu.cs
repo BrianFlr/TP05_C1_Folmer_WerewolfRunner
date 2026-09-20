@@ -45,7 +45,7 @@ public class UiWinTieMenu : MonoBehaviour
     private void OnRetryClicked()
     {
         // Reseteo el puntaje del jugador
-        //GameManager.Instance.ResetPlayersPoints();
+        //GameManager.Instance.ResetPlayerPoints();
 
         // Reanudo el tiempo del juego
         Time.timeScale = 1;
@@ -57,7 +57,7 @@ public class UiWinTieMenu : MonoBehaviour
     private void OnExitClicked()
     {
         // Reseteo el puntaje del jugador
-        //GameManager.Instance.ResetPlayersPoints();
+        //GameManager.Instance.ResetPlayerPoints();
 
         // Reanudo el tiempo del juego
         Time.timeScale = 1;

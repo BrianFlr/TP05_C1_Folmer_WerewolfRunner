@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac92a939d75870a4390e1c56ed4b8690, type: 3}
   m_Name: GameplayData
   m_EditorClassIdentifier: Assembly-CSharp::GameplayDataSo
-  displacementSpeed: 5
+  displacementSpeed: 25

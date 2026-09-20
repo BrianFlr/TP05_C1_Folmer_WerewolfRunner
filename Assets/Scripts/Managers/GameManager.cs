@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameplayDataSo data;
 
-    private float displacementSpeed = 0f;
+    [SerializeField] private float displacementSpeed = 0f;
 
     private void Awake()
     {

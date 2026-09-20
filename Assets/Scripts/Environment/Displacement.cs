@@ -6,11 +6,14 @@ public class Displacement : MonoBehaviour
 
     private void Start()
     {
-        displacementSpeed = GameManager.Instance.GetDisplacementSpeed();
+        
     }
 
     void Update()
     {
+        // Consulto constantemente la velocidad a la que debe desplazarse
+        displacementSpeed = GameManager.Instance.GetDisplacementSpeed();
+
         // Desplazo constantemente al objeto hacia la izquierda
         transform.Translate(Vector2.left * displacementSpeed * Time.deltaTime);
     }
