@@ -1,11 +1,11 @@
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private PlayerDataSo data;
 
-    [SerializeField] private GameObject floor;
+    [SerializeField] private GameObject floor0;
+    [SerializeField] private GameObject floor1;
     private Rigidbody2D rb;
 
     public float playerSpeed = 0f;
@@ -47,7 +47,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject == floor)
+        if (collision.gameObject == floor0)
+        {
+            isGround = true;
+        }
+
+        if (collision.gameObject == floor1)
         {
             isGround = true;
         }
@@ -55,7 +60,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject == floor)
+        if (collision.gameObject == floor0)
+        {
+            isGround = false;
+        }
+
+        if (collision.gameObject == floor1)
         {
             isGround = false;
         }
