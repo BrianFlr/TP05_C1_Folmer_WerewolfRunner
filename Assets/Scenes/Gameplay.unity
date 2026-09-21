@@ -300,6 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   data: {fileID: 11400000, guid: c53644c05cff45447929de5d26522050, type: 2}
+  coin: {fileID: 4359840830133079973, guid: 6b71bfeb0772de248bcfe30df25b79e4, type: 3}
   playerSpeed: 0
   playerJumpSpeed: 0
   isGround: 0
@@ -356,7 +357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CoinObjectPool
   coinPoolContainer: {fileID: 102998506}
   coinPrefab: {fileID: 4359840830133079973, guid: 6b71bfeb0772de248bcfe30df25b79e4, type: 3}
-  minimumAmount: 3
+  minimumAmount: 5
 --- !u!4 &102998506
 Transform:
   m_ObjectHideFlags: 0
@@ -4899,6 +4900,7 @@ SceneRoots:
   - {fileID: 1193401770}
   - {fileID: 385432964}
   - {fileID: 1319719542}
+  - {fileID: 15813351}
   - {fileID: 1328503076}
   - {fileID: 311490595}
   - {fileID: 1675415298}
@@ -4910,7 +4912,6 @@ SceneRoots:
   - {fileID: 1687521706}
   - {fileID: 102998506}
   - {fileID: 983217206}
-  - {fileID: 15813351}
   - {fileID: 1154244119}
   - {fileID: 134484756}
   - {fileID: 1633087163}

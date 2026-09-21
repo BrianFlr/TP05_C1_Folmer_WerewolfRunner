@@ -59,4 +59,10 @@ public class PlayerMovement : MonoBehaviour
             isGround = false;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        collision.gameObject.SetActive(false);
+        playerJumpSpeed += 1f;
+    }
 }

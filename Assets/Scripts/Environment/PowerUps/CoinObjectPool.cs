@@ -9,7 +9,7 @@ public class CoinObjectPool : MonoBehaviour
     [Header("Pool Prefab")]
     [SerializeField] GameObject coinPrefab;
 
-    [SerializeField] private float minimumAmount = 3f;
+    [SerializeField] private float minimumAmount = 5f;
 
     // Creo una lista de GameObjects
     private List<GameObject> coinPool = new List<GameObject>();
