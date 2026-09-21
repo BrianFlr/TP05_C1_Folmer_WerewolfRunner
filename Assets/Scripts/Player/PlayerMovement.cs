@@ -3,13 +3,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private PlayerDataSo data;
-
-    [SerializeField] private GameObject floor0;
-    [SerializeField] private GameObject floor1;
     private Rigidbody2D rb;
 
     public float playerSpeed = 0f;
     public float playerJumpSpeed = 0f;
+
     public bool isGround = false;
 
     private void Awake()
@@ -25,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        ResetGroundState();
+
         // Si está en el suelo el personaje puede moverse y saltar
         if (isGround)
         {
@@ -45,27 +45,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void ResetGroundState()
     {
-        if (collision.gameObject == floor0)
+        float inGroundPosition = -3.23f;
+        float playerPositionY = transform.position.y;
+
+        if (playerPositionY <= inGroundPosition)
         {
             isGround = true;
         }
-
-        if (collision.gameObject == floor1)
-        {
-            isGround = true;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject == floor0)
-        {
-            isGround = false;
-        }
-
-        if (collision.gameObject == floor1)
+        else
         {
             isGround = false;
         }
