@@ -71,6 +71,8 @@ public class UiPauseMenu : MonoBehaviour
     // Eventos de botones
     private void OnContinueClicked()
     {
+        AudioManagerUi.Instance.PlayButtonSound();
+
         // Quito el estado de pausa
         ResetPauseState();
 
@@ -80,18 +82,24 @@ public class UiPauseMenu : MonoBehaviour
 
     private void OnSettingsClicked()
     {
+        AudioManagerUi.Instance.PlayButtonSound();
+
         // Activo el panel de Configuracion
         settingsCanvas.SetActive(true);
     }
 
     private void OnCreditsClicked()
     {
+        AudioManagerUi.Instance.PlayButtonSound();
+
         // Activo el panel de Creditos
         creditsCanvas.SetActive(true);
     }
 
     private void OnExitClicked()
     {
+        AudioManagerUi.Instance.PlayButtonSound();
+
         // Quito el estado de pausa
         ResetPauseState();
 

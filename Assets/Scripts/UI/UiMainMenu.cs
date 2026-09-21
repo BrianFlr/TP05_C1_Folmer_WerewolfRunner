@@ -41,6 +41,8 @@ public class UiMainMenu : MonoBehaviour
     // Eventos de botones
     private void OnStartClicked()
     {
+        AudioManagerUi.Instance.PlayButtonSound();
+
         //// Vuelvo a correr el contador de tiempo del limite para anotar
         //if (GameManager.Instance != null)
         //{
@@ -53,18 +55,24 @@ public class UiMainMenu : MonoBehaviour
 
     private void OnSettingsClicked()
     {
+        AudioManagerUi.Instance.PlayButtonSound();
+
         // Activo el canvas settings
         settingsCanvas.SetActive(true);
     }
 
     private void OnCreditsClicked()
     {
+        AudioManagerUi.Instance.PlayButtonSound();
+
         // Activo el canvas credits
         creditsCanvas.SetActive(true);
     }
 
     private void OnExitClicked()
     {
+        AudioManagerUi.Instance.PlayButtonSound();
+
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else

@@ -23,6 +23,8 @@ public class UiButtonBack : MonoBehaviour
     // Eventos de botones.
     private void OnBackClicked()
     {
+        AudioManagerUi.Instance.PlayButtonSound();
+
         activeCanvas.SetActive(false);
         returnCanvas.SetActive(true);
     }
