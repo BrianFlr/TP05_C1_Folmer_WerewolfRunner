@@ -27,6 +27,9 @@ public class AudioManagerUi : MonoBehaviour
     // Funciones para reproducir sonidos
     public void PlayButtonSound()
     {
-        audioSource.PlayOneShot(buttonSound);
+        if (audioSource != null)
+        {
+            audioSource.PlayOneShot(buttonSound);
+        }
     }
 }

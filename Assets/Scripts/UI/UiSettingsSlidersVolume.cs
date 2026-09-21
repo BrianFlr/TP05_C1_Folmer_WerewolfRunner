@@ -7,7 +7,6 @@ public class UiSettingsMenu : MonoBehaviour
     [Header("Audio Mixer")]
     [SerializeField] private AudioMixer audioMixer;
 
-
     [Header("Volume Sliders")]
     [SerializeField] private Slider sliderMaster;
     [SerializeField] private Slider sliderBackground;
@@ -25,18 +24,19 @@ public class UiSettingsMenu : MonoBehaviour
     private void Start()
     {
         float volume = 0f;
+        const float volumeConstant = 80f;
 
         audioMixer.GetFloat("VolumeMaster", out volume);
-        sliderMaster.value = volume;
+        sliderMaster.value = volume + volumeConstant;
 
         audioMixer.GetFloat("VolumeBackground", out volume);
-        sliderBackground.value = volume;
+        sliderBackground.value = volume + volumeConstant;
         
         audioMixer.GetFloat("VolumeSfx", out volume);
-        sliderSfx.value = volume;
+        sliderSfx.value = volume + volumeConstant;
         
         audioMixer.GetFloat("VolumeUi", out volume);
-        sliderUi.value = volume;
+        sliderUi.value = volume + volumeConstant;
 
     }
 
