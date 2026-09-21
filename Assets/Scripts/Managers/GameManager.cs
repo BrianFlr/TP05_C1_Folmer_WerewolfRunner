@@ -27,8 +27,6 @@ public class GameManager : MonoBehaviour
         displacementSpeed = data.displacementSpeed;
     }
 
-
-    // Update is called once per frame
     void Update()
     {
         

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1548737975112943965}
   - component: {fileID: 127971446153883728}
   - component: {fileID: 5312115503361674668}
+  - component: {fileID: 7393419264308417368}
   m_Layer: 0
   m_Name: Obctacle Crow
   m_TagString: Untagged
@@ -47,7 +48,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb9ba29213df0440b7953150c27054e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Displacement
-  data: {fileID: 11400000, guid: be4f8d2f89e456b4e9c2a7853fb5663f, type: 2}
 --- !u!212 &1548737975112943965
 SpriteRenderer:
   serializedVersion: 2
@@ -171,3 +171,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &7393419264308417368
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791977704492008282}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3bd39c6b98c2c5f41850aa40d98a81b9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
