@@ -6,6 +6,7 @@ public class AudioManagerUi : MonoBehaviour
 
     private AudioSource audioSource;
 
+    [Header("UI Sounds")]
     [SerializeField] private AudioClip buttonSound;
 
     private void Awake()

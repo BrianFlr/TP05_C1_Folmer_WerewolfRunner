@@ -15,7 +15,15 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: ccabbeb06d71f9d4284a49954db0c69f
+    name: VolumeBackground
+  - guid: 29996a1356c1c9b4a9e83f1b5f2cc2a3
+    name: VolumeMaster
+  - guid: 37a269d28df042b4fbe13e00aca2bc89
+    name: VolumeSfx
+  - guid: 5fc5885fad7f21846a2b165e6d44fad4
+    name: VolumeUi
   m_AudioMixerGroupViews:
   - guids:
     - 26e21a983f002c7479f6abf128cf772a
@@ -43,7 +51,7 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 24400004}
-  m_UserColorIndex: 0
+  m_UserColorIndex: 3
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
@@ -70,7 +78,9 @@ AudioMixerSnapshotController:
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 00ac9db6d97415a448054dcb5df8cbc2
-  m_FloatValues: {}
+  m_FloatValues:
+    ccabbeb06d71f9d4284a49954db0c69f: -65.63083
+    29996a1356c1c9b4a9e83f1b5f2cc2a3: -15.5434475
   m_TransitionOverrides: {}
 --- !u!244 &126620868191721626
 AudioMixerEffectController:
@@ -115,7 +125,7 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 126620868191721626}
-  m_UserColorIndex: 0
+  m_UserColorIndex: 8
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
@@ -125,7 +135,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ui
+  m_Name: UI
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 9d1f8c6b3b799a54a8b012b01b567069
   m_Children: []
@@ -134,7 +144,7 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 1224910474218740395}
-  m_UserColorIndex: 0
+  m_UserColorIndex: 6
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
@@ -167,7 +177,7 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 7905653763607482924}
-  m_UserColorIndex: 0
+  m_UserColorIndex: 4
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0

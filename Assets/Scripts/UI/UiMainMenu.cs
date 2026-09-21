@@ -25,7 +25,7 @@ public class UiMainMenu : MonoBehaviour
 
     private void Start()
     {
-#if UNITY_WEBGL
+#if UNITY_WEBGL && !UNITY_EDITOR
         btnExit.gameObject.SetActive(false);
 #endif
     }
