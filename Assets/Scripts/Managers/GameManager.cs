@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float displacementSpeed = 0f;
     [SerializeField] private float crowDisplacementSpeed = 0f;
     private float playerPoints = 0f;
-    private float timerPlayerPoints = 2f;
+    private float ratePlayerPoints = 0.4f;
+    private float timerPlayerPoints = 0f;
 
     private void Awake()
     {
@@ -32,22 +33,26 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-
-
-        playerPoints += Time.time;
+        if (Time.time > timerPlayerPoints)
+        {
+            playerPoints++;
+            timerPlayerPoints = Time.time + ratePlayerPoints;
+        }
     }
 
-    // Get para llevar con facilidad la velocidad de dezplazamiento a donde se requiera
+    // Get para llevar con facilidad la velocidad de dezplazamiento adonde se requiera
     public float GetDisplacementSpeed()
     {
         return displacementSpeed;
     }
     
+    // Get de la velocidad de desplazamientos del cuervo
     public float GetCrowDisplacementSpeed()
     {
         return crowDisplacementSpeed;
     }
 
+    // Get para mostrar los puntos del player
     public float GetPlayerPoints()
     {
         return playerPoints;

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8461746505512243234}
   - component: {fileID: 1634688040755550021}
   - component: {fileID: 3996560268803739759}
+  - component: {fileID: 8906803322670661205}
   m_Layer: 0
   m_Name: Obstacle Mutant Toad
   m_TagString: Untagged
@@ -47,7 +48,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb9ba29213df0440b7953150c27054e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Displacement
-  data: {fileID: 11400000, guid: be4f8d2f89e456b4e9c2a7853fb5663f, type: 2}
 --- !u!212 &8461746505512243234
 SpriteRenderer:
   serializedVersion: 2
@@ -178,5 +178,27 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!95 &8906803322670661205
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6269658804845281611}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a148e14cf9083dc4c8c91e737285f998, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

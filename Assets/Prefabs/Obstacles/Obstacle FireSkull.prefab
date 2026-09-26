@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb9ba29213df0440b7953150c27054e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Displacement
-  data: {fileID: 11400000, guid: be4f8d2f89e456b4e9c2a7853fb5663f, type: 2}
 --- !u!212 &2532968781224327075
 SpriteRenderer:
   serializedVersion: 2
@@ -168,5 +167,5 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
