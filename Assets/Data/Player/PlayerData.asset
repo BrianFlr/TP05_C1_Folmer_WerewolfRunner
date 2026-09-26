@@ -17,4 +17,4 @@ MonoBehaviour:
   moveLeft: 97
   health: 3
   speed: 4
-  jumpSpeed: 9.5
+  jumpForce: 9.5

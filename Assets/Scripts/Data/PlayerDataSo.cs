@@ -9,5 +9,5 @@ public class PlayerDataSo : ScriptableObject
     public KeyCode moveLeft = KeyCode.A;
     [Range (1,10)]public float health = 3f;
     [Range(3, 10)] public float speed = 4f;
-    [Range(8, 10)] public float jumpSpeed = 9.5f;
+    [Range(8, 10)] public float jumpForce = 9.5f;
 }

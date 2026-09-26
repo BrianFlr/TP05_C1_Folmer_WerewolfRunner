@@ -3,10 +3,12 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private PlayerDataSo data;
-    private Rigidbody2D rb;
 
+    [SerializeField] private LayerMask layerGround;
+    private Rigidbody2D rb;
     public float playerSpeed = 0f;
-    public float playerJumpSpeed = 0f;
+    public float playerJumpForce = 0f;
+    public float rayCastLength = 0.52f;
 
     public bool isGround = false;
 
@@ -18,14 +20,20 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         playerSpeed = data.speed;
-        playerJumpSpeed = data.jumpSpeed;
+        playerJumpForce = data.jumpForce;
     }
 
     private void FixedUpdate()
     {
-        ResetGroundState();
+        // Creo un rayo en la posicion del player mirando hacia abajo que detecte cuándo colisiono con el layer Ground
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, rayCastLength, layerGround);
 
-        // Si está en el suelo el personaje puede moverse y saltar
+        // Si el rayo colisiona con el layer de Ground va a ser true y en caso contrario, false
+        isGround = hit.collider != null;
+
+        //ResetGroundState();
+
+        // Si está en el suelo el player puede moverse y saltar
         if (isGround)
         {
             if (Input.GetKey(data.moveLeft))
@@ -40,29 +48,20 @@ public class PlayerMovement : MonoBehaviour
 
             if (Input.GetKey(data.jump))
             {
-                rb.linearVelocity = new Vector2(0, 1) * playerJumpSpeed;
+                rb.linearVelocity = new Vector2(0, 1) * playerJumpForce;
             }
         }
     }
 
-    private void ResetGroundState()
+    private void OnDrawGizmos()
     {
-        float inGroundPosition = -3.23f;
-        float playerPositionY = transform.position.y;
-
-        if (playerPositionY <= inGroundPosition)
-        {
-            isGround = true;
-        }
-        else
-        {
-            isGround = false;
-        }
+        Gizmos.color = Color.blue;
+        Gizmos.DrawLine(transform.position, transform.position + Vector3.down * rayCastLength);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.gameObject.SetActive(false);
-        playerJumpSpeed += 1f;
+        //collision.gameObject.SetActive(false);
+        //playerJumpForce += 1f;
     }
 }
