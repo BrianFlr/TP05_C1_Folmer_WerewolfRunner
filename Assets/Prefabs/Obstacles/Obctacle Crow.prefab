@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2668245874959338168}
-  - component: {fileID: -4272164517884704112}
+  - component: {fileID: -7935591913885172218}
   - component: {fileID: 1548737975112943965}
   - component: {fileID: 127971446153883728}
   - component: {fileID: 5312115503361674668}
@@ -37,7 +37,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-4272164517884704112
+--- !u!114 &-7935591913885172218
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,9 +46,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1791977704492008282}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adb9ba29213df0440b7953150c27054e, type: 3}
+  m_Script: {fileID: 11500000, guid: 118fdee2f4c83e2489e3735cf17b324a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Displacement
+  m_EditorClassIdentifier: Assembly-CSharp::CrowDisplacement
 --- !u!212 &1548737975112943965
 SpriteRenderer:
   serializedVersion: 2

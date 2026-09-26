@@ -54,6 +54,9 @@ public class ToadObjectPool : MonoBehaviour
             CreateNewObjectToad();
         }
 
+        // Activo el objeto seleccionado de la lista (Del pool)
+        obj.SetActive(true);
+
         // Devuelvo el objeto
         return obj;
     }

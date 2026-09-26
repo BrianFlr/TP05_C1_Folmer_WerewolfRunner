@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Pool;
 
 public class ObstaclesSpawner : MonoBehaviour
 {
@@ -13,8 +12,10 @@ public class ObstaclesSpawner : MonoBehaviour
     private GameObject skullClone;
     private GameObject toadClone;
 
-    [SerializeField] private float spawnRate = 2.0f;
+    private float crowSpawnRate = 0f;
+    private float toadSpawnRate = 0f;
     private float crowNextSpawnTime = 0f;
+    private float toadNextSpawnTime = 0f;
     private float crowRrandomPositionY = 0f;
 
     void Update()
@@ -22,9 +23,16 @@ public class ObstaclesSpawner : MonoBehaviour
         // Comparo con si el tiempo paso lo suficiente para volver a spawnear otro cuervo
         if (Time.time >= crowNextSpawnTime)
         {
-            spawnRate = Random.Range(0.5f, 3f);
-            crowRrandomPositionY = Random.Range(-3,5);
+            crowSpawnRate = Random.Range(1.5f, 3f);
+            crowRrandomPositionY = Random.Range(-1.5f,5f);
             SpawnCrow();
+        }
+
+        // Comparo con si el tiempo paso lo suficiente para volver a spawnear otro cuervo
+        if (Time.time >= toadNextSpawnTime)
+        {
+            toadSpawnRate = Random.Range(4f, 5f);
+            SpawnToad();
         }
     }
 
@@ -32,12 +40,25 @@ public class ObstaclesSpawner : MonoBehaviour
     private void SpawnCrow()
     {
         // Al tiempo que transcurrio le sumo el ratio de spawn
-        crowNextSpawnTime = Time.time + spawnRate;
+        crowNextSpawnTime = Time.time + crowSpawnRate;
         
         // Tomo un objeto de mi pool
         crowClone = crowPool.GetObjectCrow();
 
         // Ubico el objeto en la posicion X del spawner y en una posicion aleatoria en Y
         crowClone.transform.position = new Vector2(transform.position.x, crowRrandomPositionY);
+    }
+
+    // Funcion para spawnear los cuervos
+    private void SpawnToad()
+    {
+        // Al tiempo que transcurrio le sumo el ratio de spawn
+        toadNextSpawnTime = Time.time + toadSpawnRate;
+
+        // Tomo un objeto de mi pool
+        toadClone = toadPool.GetObjectToad();
+
+        // Ubico el objeto en la posicion X del spawner y en una posicion aleatoria en Y
+        toadClone.transform.position = new Vector2(transform.position.x, -3f);
     }
 }
