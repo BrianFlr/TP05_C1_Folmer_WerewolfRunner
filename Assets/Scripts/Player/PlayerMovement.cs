@@ -7,11 +7,11 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private LayerMask layerGround;
     private Rigidbody2D rb;
-    public float playerSpeed = 0f;
-    public float playerJumpForce = 0f;
-    public float rayCastLength = 0.52f;
-
-    public bool isGround = false;
+    private float playerSpeed = 0f;
+    private float playerJumpForce = 0f;
+    private float rayCastLength = 0.52f;
+    
+    private bool isGround = false;
 
     private void Awake()
     {

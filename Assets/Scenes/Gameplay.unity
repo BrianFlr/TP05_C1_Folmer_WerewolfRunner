@@ -551,9 +551,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   playerData: {fileID: 11400000, guid: c53644c05cff45447929de5d26522050, type: 2}
   gameplayData: {fileID: 11400000, guid: be4f8d2f89e456b4e9c2a7853fb5663f, type: 2}
-  layerEnemies:
-    serializedVersion: 2
-    m_Bits: 256
+  crowObstacle: {fileID: 1791977704492008282, guid: b4e774910d50fff4f8a59543be7d8d85, type: 3}
+  skullObstacle: {fileID: 8455950005645277200, guid: ac4b3cebf49273b4eb826ad9b3e61571, type: 3}
+  toadObstacle: {fileID: 6269658804845281611, guid: 1e7372c913f235d46a65e14093976e6a, type: 3}
   playerHealth: 0
 --- !u!4 &134484756
 Transform:

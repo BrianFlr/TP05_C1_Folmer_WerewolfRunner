@@ -6,7 +6,10 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] PlayerDataSo playerData;
     [SerializeField] GameplayDataSo gameplayData;
-    private int layerEnemies;
+
+    [SerializeField] GameObject crowObstacle;
+    [SerializeField] GameObject skullObstacle;
+    [SerializeField] GameObject toadObstacle;
 
     [SerializeField] private int playerHealth = 0;
     private float displacementSpeed = 0f;
@@ -33,7 +36,6 @@ public class GameManager : MonoBehaviour
         displacementSpeed = gameplayData.displacementSpeed;
         crowDisplacementSpeed = gameplayData.displacementSpeed * 1.2f;
         playerHealth = playerData.health;
-        layerEnemies = LayerMask.NameToLayer("Enemies");
     }
 
     private void Update()
@@ -46,9 +48,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D enemy)
     {
-        if (collision.gameObject.layer == layerEnemies)
+        if (enemy.gameObject == crowObstacle || enemy.gameObject == toadObstacle)
         {
             RemovePlayerHealth();
         }
