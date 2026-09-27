@@ -24,6 +24,27 @@ public class PlayerMovement : MonoBehaviour
         playerJumpForce = data.jumpForce;
     }
 
+    private void Update()
+    {
+        if (isGround)
+        {
+            animator.SetBool("Jump", false);
+            animator.SetBool("Fall", false);
+            animator.SetBool("Ground", isGround);
+        }
+        
+        if (rb.linearVelocityY > 0 && !isGround)
+        {
+            animator.SetBool("Jump", true);
+            animator.SetBool("Ground", false);
+        }
+        else if (rb.linearVelocityY < -0.1f && !isGround)
+        {
+            animator.SetBool("Jump", false);
+            animator.SetBool("Fall", true);
+        }
+    }
+
     private void FixedUpdate()
     {
         // Creo un rayo en la posicion del player mirando hacia abajo que detecte cuándo colisiono con el layer Ground
@@ -31,8 +52,6 @@ public class PlayerMovement : MonoBehaviour
 
         // Si el rayo colisiona con el layer de Ground va a ser true y en caso contrario, false
         isGround = hit.collider != null;
-
-        //ResetGroundState();
 
         // Si está en el suelo el player puede moverse y saltar
         if (isGround)
@@ -50,7 +69,6 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(data.jump))
             {
                 rb.linearVelocity = new Vector2(0, 1) * playerJumpForce;
-                animator.SetTrigger("Jump");
             }
         }
     }
