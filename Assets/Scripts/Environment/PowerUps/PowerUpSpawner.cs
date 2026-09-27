@@ -3,37 +3,38 @@ using UnityEngine.Pool;
 
 public class PowerUpSpawner : MonoBehaviour
 {
-    [Header ("Object Pools")]
-    [SerializeField] private CoinObjectPool coinPool;
+    [Header ("Object Array")]
+    [SerializeField] private GameObject[] powerUps;
 
-    // Creo variables GameObject para luego asignarle el objeto que tomare de mis pools
-    private GameObject coinClone;
-
-    [SerializeField] private float spawnRate = 2.0f;
-    private float coinNextSpawnTime = 0f;
-    private float coinRrandomPositionY = 0f;
+    private float spawnRate = 2.0f;
+    private float powerUpNextSpawnTime = 10f;
+    private float powerUpRrandomPositionY = 0f;
 
     void Update()
     {
-        // Comparo con si el tiempo paso lo suficiente para volver a spawnear otro cuervo
-        if (Time.time >= coinNextSpawnTime)
+        // Comparo con si el tiempo paso lo suficiente para volver a spawnear otro
+        if (Time.time >= powerUpNextSpawnTime)
         {
-            spawnRate = Random.Range(5f, 10f);
-            coinRrandomPositionY = Random.Range(-3,0);
-            SpawnCoin();
+            spawnRate = Random.Range(15f, 30f);
+            powerUpRrandomPositionY = Random.Range(-1,0.9f);
+            SpawnPowerUp();
         }
     }
 
     // Funcion para spawnear los cuervos
-    private void SpawnCoin()
+    private void SpawnPowerUp()
     {
         // Al tiempo que transcurrio le sumo el ratio de spawn
-        coinNextSpawnTime = Time.time + spawnRate;
+        powerUpNextSpawnTime = Time.time + spawnRate;
 
-        // Tomo un objeto de mi pool
-        coinClone = coinPool.GetObjectCoin();
+        // Tomo un objeto de mi array
+        int idPowerUP = Random.Range(0, powerUps.Length);
+        GameObject powerUp = powerUps[idPowerUP];
 
-        // Ubico el objeto en la posicion X del spawner y en una posicion aleatoria en Y
-        coinClone.transform.position = new Vector2(transform.position.x, coinRrandomPositionY);
+        // Activo el objeto
+        powerUp.SetActive(true);
+
+        // Ubico el objeto en la posicion X del spawner
+        powerUp.transform.position = new Vector2(transform.position.x, powerUpRrandomPositionY);
     }
 }
