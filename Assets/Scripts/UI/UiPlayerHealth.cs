@@ -35,6 +35,5 @@ public class UiPlayerHealth : MonoBehaviour
         {
             heartList[2].SetActive(false);
         }
-
     }
 }

@@ -251,7 +251,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerPowerUp
   lifePowerUp: {fileID: 1720200036}
   shieldPowerUp: {fileID: 849577555}
-  invulnerabilityTime: 0
+  damageInvulnerabilityTime: 1
+  powerUpInvulnerabilityTime: 6
 --- !u!114 &15813357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3206,6 +3207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1214857534}
   - component: {fileID: 1214857536}
+  - component: {fileID: 1214857537}
   - component: {fileID: 1214857535}
   - component: {fileID: 1214857533}
   - component: {fileID: 1214857532}
@@ -3330,6 +3332,20 @@ MonoBehaviour:
   - {fileID: 1156272078}
   - {fileID: 1926216022}
   - {fileID: 1458564708}
+--- !u!114 &1214857537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214857530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85408c5e3fa15f4599081906a0637c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UiPlayerPowerUp
+  panelPowerUp: {fileID: 1480215280}
+  textTimePowerUp: {fileID: 2044700814}
 --- !u!1 &1215361680
 GameObject:
   m_ObjectHideFlags: 0
@@ -4335,7 +4351,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1480215281
 RectTransform:
   m_ObjectHideFlags: 0

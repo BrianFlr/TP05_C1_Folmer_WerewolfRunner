@@ -24,7 +24,7 @@ public class ObstaclesSpawner : MonoBehaviour
         toadSpawnTimer += Time.deltaTime;
 
         // Comparo con si el tiempo paso lo suficiente para volver a spawnear otro cuervo
-        if (Time.time >= crowSpawnRate)
+        if (crowSpawnTimer >= crowSpawnRate)
         {
             crowRrandomPositionY = Random.Range(-1.5f,5f);
             SpawnCrow();
@@ -34,7 +34,7 @@ public class ObstaclesSpawner : MonoBehaviour
         }
 
         // Comparo con si el tiempo paso lo suficiente para volver a spawnear otro cuervo
-        if (Time.time >= toadSpawnRate)
+        if (toadSpawnTimer >= toadSpawnRate)
         {
             SpawnToad();
 
@@ -62,4 +62,6 @@ public class ObstaclesSpawner : MonoBehaviour
         // Ubico el objeto en la posicion X del spawner y en una posicion definida en Y
         toadClone.transform.position = new Vector2(transform.position.x, -3.20f);
     }
+
+
 }

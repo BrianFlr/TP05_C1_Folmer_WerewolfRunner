@@ -2,17 +2,16 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using static GameManager;
 
-public class UiWinTieMenu : MonoBehaviour
+public class UiGameOverMenu : MonoBehaviour
 {
-    [Header("Canvas WinTie")]
+    [Header("Canvas GameOver")]
     [SerializeField] private GameObject canvasGameOver;
 
-    [Header("Canvas WinTie Text")]
+    [Header("Canvas GameOver Text")]
     [SerializeField] private TMP_Text textPlayerPoints;
 
-    [Header("Retry Button")]
+    [Header("Buttons")]
     [SerializeField] private Button btnRetry;
     [SerializeField] private Button btnExit;
 
@@ -22,17 +21,23 @@ public class UiWinTieMenu : MonoBehaviour
         btnRetry.onClick.AddListener(OnRetryClicked);
     }
 
+    private void Start()
+    {
+        // Muestro los puntos del player
+        textPlayerPoints.text = GameManager.Instance.GetPlayerPoints().ToString("0");
+    }
+
     private void Update()
     {
-        //// Si la vida del jugador llegó a 0
-        //if (GameManager.Instance.GetPlayerHealth() <= 0)
-        //{
-        //    // Detengo el juego
-        //    Time.timeScale = 0;
+        // Si la vida del jugador llegó a 0
+        if (GameManager.Instance.GetPlayerHealth() <= 0)
+        {
+            // Detengo el juego
+            Time.timeScale = 0;
 
-        //    // Activo el canvas de ganar o empatar
-        //    canvasWinTie.SetActive(true);
-        //}
+            // Activo el canvas de ganar o empatar
+            canvasGameOver.SetActive(true);
+        }
     }
 
     private void OnDestroy()
@@ -44,8 +49,8 @@ public class UiWinTieMenu : MonoBehaviour
     // Eventos de botones
     private void OnRetryClicked()
     {
-        // Reseteo el puntaje del jugador
-        //GameManager.Instance.ResetPlayerPoints();
+        // Reseteo la escena Gameplay
+        SceneManager.LoadScene("Gameplay");
 
         // Reanudo el tiempo del juego
         Time.timeScale = 1;
@@ -56,9 +61,6 @@ public class UiWinTieMenu : MonoBehaviour
 
     private void OnExitClicked()
     {
-        // Reseteo el puntaje del jugador
-        //GameManager.Instance.ResetPlayerPoints();
-
         // Reanudo el tiempo del juego
         Time.timeScale = 1;
 

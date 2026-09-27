@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -10,14 +11,27 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject crowObstacle;
     [SerializeField] GameObject skullObstacle;
     [SerializeField] GameObject toadObstacle;
+    private int playerLayer = 0;
+    private int enemiesLayer = 0;
 
-    [SerializeField] private int playerHealth = 0;
     private float displacementSpeed = 0f;
     private float crowDisplacementSpeed = 0f;
+
+    [SerializeField] private int playerHealth = 0;
+    [SerializeField] private float powerUpTimer = 0f;
+    private float powerUpDefaultTime = 0f;
+    private bool isShieldPowerUp = false;
+
     private float playerPoints = 0f;
     private float timerPlayerPoints = 0f;
     private float ratePlayerPoints = 0.4f;
-    private float powerUpTime = 0f;
+
+    private bool isDamage = false;
+    private float noDamageTimer = 0f;
+    private float noDamageDefaultTime = 1.5f;
+
+
+    private bool isGameOver = false;
 
     private void Awake()
     {
@@ -33,9 +47,15 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        // Tomo el id de cada layer
+        playerLayer = LayerMask.NameToLayer("Player");
+        enemiesLayer = LayerMask.NameToLayer("Enemies");
+
         displacementSpeed = gameplayData.displacementSpeed;
         crowDisplacementSpeed = gameplayData.displacementSpeed * 1.2f;
         playerHealth = playerData.health;
+        powerUpTimer = powerUpDefaultTime;
+        noDamageTimer = noDamageDefaultTime;
     }
 
     private void Update()
@@ -47,6 +67,43 @@ public class GameManager : MonoBehaviour
         {
             playerPoints++;
             timerPlayerPoints -= ratePlayerPoints;
+        }
+
+        if (playerHealth <= 0)
+        {
+            isGameOver = true;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (isShieldPowerUp)
+        {
+            Physics2D.IgnoreLayerCollision(playerLayer, enemiesLayer, true);
+
+            powerUpTimer -= Time.fixedDeltaTime;
+
+            if (powerUpTimer <= 0)
+            {
+                isShieldPowerUp = false;
+                Physics2D.IgnoreLayerCollision(playerLayer, enemiesLayer, false);
+                ResetPowerUpTimer();
+            }
+        }
+
+        if (isDamage)
+        {
+            // Ignoro las colisiones entre el layer del player y el de los enemigos
+            Physics2D.IgnoreLayerCollision(playerLayer, enemiesLayer, true);
+
+            noDamageTimer -= Time.fixedDeltaTime;
+
+            if (noDamageTimer <= 0)
+            {
+                isDamage = false;
+                Physics2D.IgnoreLayerCollision(playerLayer, enemiesLayer, false);
+                ResetNoDamageTimer();
+            }
         }
     }
 
@@ -62,19 +119,7 @@ public class GameManager : MonoBehaviour
         return crowDisplacementSpeed;
     }
 
-    // Get para mostrar los puntos del player
-    public float GetPlayerPoints()
-    {
-        return playerPoints;
-    }
-
-
-    public float GetPowerUpTime()
-    {
-        return powerUpTime;
-    }
-
-
+    // Funciones para la vida del jugador
     public int GetPlayerHealth()
     {
         return playerHealth;
@@ -92,4 +137,54 @@ public class GameManager : MonoBehaviour
     {
         playerHealth--;
     }
+
+    // Funciones para power ups
+    public void SetShieldPowerUpState(bool isPowerUp)
+    {
+        isShieldPowerUp = isPowerUp;
+    }
+
+    public bool GetShieldPowerUpState()
+    {
+        return isShieldPowerUp;
+    }
+
+    public void SetPowerUpDefaultTime(float time)
+    {
+        powerUpDefaultTime = time;
+    }
+
+    public float GetPowerUpTimer()
+    {
+        return powerUpTimer;
+    }
+
+    private void ResetPowerUpTimer()
+    {
+        powerUpTimer = powerUpDefaultTime;
+    }
+
+    // Get para mostrar los puntos del player
+    public float GetPlayerPoints()
+    {
+        return playerPoints;
+    }
+
+    // Set de la variable que me indica si recibio daño el jugador
+    public void SetDamageState(bool damage)
+    {
+        isDamage = damage;
+    }
+
+    //Reset del contador de tiempo de invulnerabilidad
+    private void ResetNoDamageTimer()
+    {
+        noDamageTimer = noDamageDefaultTime;
+    }
+
+    // Get de la variable game over
+    public bool GetGameOverState()
+    {
+        return isGameOver;
+    } 
 }

@@ -8,29 +8,17 @@ public class PlayerPowerUp : MonoBehaviour
 
     private int playerLayer = 0;
     private int enemiesLayer = 0;
-    public float invulnerabilityTime = 0f;
+    public float damageInvulnerabilityTime = 1f;
+    public float powerUpInvulnerabilityTime = 6f;
 
     private void Start()
     {
         // Tomo el id de cada layer
         playerLayer = LayerMask.NameToLayer("Player");
         enemiesLayer = LayerMask.NameToLayer("Enemies");
-    }
 
-    private void Update()
-    {
-        
-    }
-
-    // Colision con los enemigos u obstaculos
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemies"))
-        {
-            GameManager.Instance.RemovePlayerHealth();
-            invulnerabilityTime = 1f;
-            StartCoroutine("Invulnerability");
-        }
+        // Le paso el tiempo que durara mi power up a GameManager
+        GameManager.Instance.SetPowerUpDefaultTime(powerUpInvulnerabilityTime);
     }
 
     // Trigger de los power ups
@@ -47,15 +35,7 @@ public class PlayerPowerUp : MonoBehaviour
         if (powerUp.gameObject == shieldPowerUp)
         {
             powerUp.gameObject.SetActive(false);
-            invulnerabilityTime = 5f;
-            StartCoroutine("Invulnerability");
+            GameManager.Instance.SetShieldPowerUpState(true);
         }
-    }
-
-    private IEnumerator Invulnerability()
-    {
-        Physics2D.IgnoreLayerCollision(playerLayer, enemiesLayer, true);
-        yield return new WaitForSeconds(invulnerabilityTime);
-        Physics2D.IgnoreLayerCollision(playerLayer, enemiesLayer, false);
     }
 }
