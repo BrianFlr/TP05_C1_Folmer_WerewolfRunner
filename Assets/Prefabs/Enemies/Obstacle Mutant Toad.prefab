@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 482563340769471584}
   m_Layer: 8
   m_Name: Toad Visual
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 3996560268803739759}
   m_Layer: 8
   m_Name: Obstacle Mutant Toad
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 8039521187753310706}
   m_Layer: 8
   m_Name: Visual
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
