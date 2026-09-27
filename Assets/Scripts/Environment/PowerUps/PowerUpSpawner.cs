@@ -16,7 +16,7 @@ public class PowerUpSpawner : MonoBehaviour
         if (Time.time >= powerUpNextSpawnTime)
         {
             spawnRate = Random.Range(15f, 30f);
-            powerUpRrandomPositionY = Random.Range(-1,0.9f);
+            powerUpRrandomPositionY = Random.Range(-1,0.8f);
             SpawnPowerUp();
         }
     }
