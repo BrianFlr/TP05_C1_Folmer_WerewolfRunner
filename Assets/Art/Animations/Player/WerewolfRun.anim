@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: werewolf-run
+  m_Name: WerewolfRun
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -24,15 +24,15 @@ AnimationClip:
       value: {fileID: -6361255259424178279, guid: 71a13722edcf3de47a5e95e06bb71f78, type: 3}
     - time: 0.1
       value: {fileID: 3918620042345672985, guid: 71a13722edcf3de47a5e95e06bb71f78, type: 3}
-    - time: 0.21666667
+    - time: 0.2
       value: {fileID: -4753405908409220737, guid: 71a13722edcf3de47a5e95e06bb71f78, type: 3}
-    - time: 0.3
+    - time: 0.28333333
       value: {fileID: -1836168771796391148, guid: 71a13722edcf3de47a5e95e06bb71f78, type: 3}
-    - time: 0.4
+    - time: 0.38333333
       value: {fileID: 4685384643252750661, guid: 71a13722edcf3de47a5e95e06bb71f78, type: 3}
-    - time: 0.51666665
+    - time: 0.48333332
       value: {fileID: -7172754174398897462, guid: 71a13722edcf3de47a5e95e06bb71f78, type: 3}
-    - time: 0.6166667
+    - time: 0.5833333
       value: {fileID: -6361255259424178279, guid: 71a13722edcf3de47a5e95e06bb71f78, type: 3}
     attribute: m_Sprite
     path: 
@@ -68,7 +68,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.6333333
+    m_StopTime: 0.59999996
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

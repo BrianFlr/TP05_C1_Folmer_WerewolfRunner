@@ -132,19 +132,19 @@ TextureImporter:
       name: crow-fly_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 8
-        width: 30
-        height: 40
+        x: 0
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f8e650c4312ab77d0800000000000000
+      spriteID: 1cd280a57d035f74dbbca3c8e47cf200
       internalID: -2919561729656131953
       vertices: []
       indices: 
@@ -154,19 +154,19 @@ TextureImporter:
       name: crow-fly_1
       rect:
         serializedVersion: 2
-        x: 60
-        y: 1
-        width: 27
-        height: 30
+        x: 48
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 03134b2b5756f60d0800000000000000
+      spriteID: 106676e3fb0d3b143b28a1cb4d4ec534
       internalID: -3427409235221925584
       vertices: []
       indices: 
@@ -176,7 +176,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2c5a7ee6a158fb943844e5bdb9abaeb8
     internalID: 0
     vertices: []
     indices: 
@@ -184,7 +184,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":1.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+      - key: SpriteEditor.SliceOnImport
+        value: False
     nameFileIdTable:
       crow-fly_0: -2919561729656131953
       crow-fly_1: -3427409235221925584

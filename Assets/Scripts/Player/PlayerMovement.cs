@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private PlayerDataSo data;
+    [SerializeField] private Animator animator;
 
     [SerializeField] private LayerMask layerGround;
     private Rigidbody2D rb;
@@ -49,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(data.jump))
             {
                 rb.linearVelocity = new Vector2(0, 1) * playerJumpForce;
+                animator.SetTrigger("Jump");
             }
         }
     }

@@ -59,6 +59,6 @@ public class ObstaclesSpawner : MonoBehaviour
         toadClone = toadPool.GetObjectToad();
 
         // Ubico el objeto en la posicion X del spawner y en una posicion aleatoria en Y
-        toadClone.transform.position = new Vector2(transform.position.x, -3f);
+        toadClone.transform.position = new Vector2(transform.position.x, -2.95f);
     }
 }

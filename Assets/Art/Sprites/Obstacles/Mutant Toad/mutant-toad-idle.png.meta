@@ -138,12 +138,12 @@ TextureImporter:
       name: mutant-toad-idle_0
       rect:
         serializedVersion: 2
-        x: 14
+        x: 0
         y: 0
-        width: 50
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 80
+        height: 64
+      alignment: 9
+      pivot: {x: 0.4735624, y: 0.2717195}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -160,12 +160,12 @@ TextureImporter:
       name: mutant-toad-idle_1
       rect:
         serializedVersion: 2
-        x: 94
+        x: 80
         y: 0
-        width: 50
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 80
+        height: 64
+      alignment: 9
+      pivot: {x: 0.4735624, y: 0.2717195}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -182,12 +182,12 @@ TextureImporter:
       name: mutant-toad-idle_2
       rect:
         serializedVersion: 2
-        x: 174
+        x: 160
         y: 0
-        width: 50
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 80
+        height: 64
+      alignment: 9
+      pivot: {x: 0.4735624, y: 0.2717195}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -204,12 +204,12 @@ TextureImporter:
       name: mutant-toad-idle_3
       rect:
         serializedVersion: 2
-        x: 254
+        x: 240
         y: 0
-        width: 50
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 80
+        height: 64
+      alignment: 9
+      pivot: {x: 0.4735624, y: 0.2717195}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -226,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 819fa798ca93d37439a3190cce4261b2
     internalID: 0
     vertices: []
     indices: 
@@ -234,7 +234,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":80.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.4735623896121979,"y":0.27171948552131655},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       mutant-toad-idle_0: 4217304980618897571
       mutant-toad-idle_1: -8088376048313182806
