@@ -15,8 +15,8 @@ public class GameManager : MonoBehaviour
     private float displacementSpeed = 0f;
     private float crowDisplacementSpeed = 0f;
     private float playerPoints = 0f;
-    private float ratePlayerPoints = 0.4f;
     private float timerPlayerPoints = 0f;
+    private float ratePlayerPoints = 0.4f;
     private float powerUpTime = 0f;
 
     private void Awake()
@@ -40,19 +40,13 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        timerPlayerPoints += Time.deltaTime;
+
         // Sumo continuamente puntos al jugador
-        if (Time.time > timerPlayerPoints)
+        if (timerPlayerPoints >= ratePlayerPoints)
         {
             playerPoints++;
-            timerPlayerPoints = Time.time + ratePlayerPoints;
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D enemy)
-    {
-        if (enemy.gameObject == crowObstacle || enemy.gameObject == toadObstacle)
-        {
-            RemovePlayerHealth();
+            timerPlayerPoints -= ratePlayerPoints;
         }
     }
 

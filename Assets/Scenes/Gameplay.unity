@@ -130,9 +130,10 @@ GameObject:
   - component: {fileID: 15813351}
   - component: {fileID: 15813354}
   - component: {fileID: 15813356}
+  - component: {fileID: 15813357}
   - component: {fileID: 15813355}
   - component: {fileID: 15813352}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,10 +200,6 @@ MonoBehaviour:
   layerGround:
     serializedVersion: 2
     m_Bits: 64
-  playerSpeed: 0
-  playerJumpForce: 0
-  rayCastLength: 0.52
-  isGround: 0
 --- !u!70 &15813355
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -254,6 +251,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerPowerUp
   lifePowerUp: {fileID: 1720200036}
   shieldPowerUp: {fileID: 849577555}
+  invulnerabilityTime: 0
+--- !u!114 &15813357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15813349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88da84dbad2ad56458963b429f118040, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCollisionEnemies
 --- !u!1 &122024775
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,7 +589,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 147700994}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1022,7 +1032,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 308304447}
-  - component: {fileID: 308304450}
   - component: {fileID: 308304449}
   - component: {fileID: 308304448}
   m_Layer: 5
@@ -1090,23 +1099,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 308304446}
   m_CullTransparentMesh: 1
---- !u!114 &308304450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 308304446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26b001e89bd017545868d59594deb5d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UiPlayerHealth
-  data: {fileID: 11400000, guid: c53644c05cff45447929de5d26522050, type: 2}
-  heartList:
-  - {fileID: 1156272078}
-  - {fileID: 1926216022}
-  - {fileID: 1458564708}
 --- !u!1 &315048762
 GameObject:
   m_ObjectHideFlags: 0
@@ -3213,6 +3205,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1214857534}
+  - component: {fileID: 1214857536}
   - component: {fileID: 1214857535}
   - component: {fileID: 1214857533}
   - component: {fileID: 1214857532}
@@ -3320,6 +3313,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UiPlayerPoints
   textPoints: {fileID: 1199975591}
+--- !u!114 &1214857536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214857530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26b001e89bd017545868d59594deb5d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UiPlayerHealth
+  data: {fileID: 11400000, guid: c53644c05cff45447929de5d26522050, type: 2}
+  heartList:
+  - {fileID: 1156272078}
+  - {fileID: 1926216022}
+  - {fileID: 1458564708}
 --- !u!1 &1215361680
 GameObject:
   m_ObjectHideFlags: 0
@@ -3472,7 +3482,7 @@ GameObject:
   - component: {fileID: 1296862709}
   - component: {fileID: 1296862710}
   - component: {fileID: 1296862711}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}

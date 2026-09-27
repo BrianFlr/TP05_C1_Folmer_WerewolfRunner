@@ -78,10 +78,4 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawLine(transform.position, transform.position + Vector3.down * rayCastLength);
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //collision.gameObject.SetActive(false);
-        //playerJumpForce += 1f;
-    }
 }

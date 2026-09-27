@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ObstaclesDespawner : MonoBehaviour
+public class ObjectDespawner : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {

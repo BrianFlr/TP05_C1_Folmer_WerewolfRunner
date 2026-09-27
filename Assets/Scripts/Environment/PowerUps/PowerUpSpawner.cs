@@ -2,30 +2,41 @@ using UnityEngine;
 
 public class PowerUpSpawner : MonoBehaviour
 {
-    [Header ("Object Array")]
+    [Header ("PowerUps Array")]
     [SerializeField] private GameObject[] powerUps;
 
-    private float spawnRate = 2.0f;
-    private float powerUpNextSpawnTime = 10f;
+    private float powerUpSpawnRate = 0f;
+    private float powerUpSpawnTimer = 10f;
+    private float powerUpMinSpawnTime = 15f;
+    private float powerUpMaxSpawnTime = 30f;
+
+    private float powerUpMinSpawnRange = -1f;
+    private float powerUpMaxSpawnRange = -2.90f;
     private float powerUpRrandomPositionY = 0f;
 
-    void Update()
+    private void Start()
     {
-        // Comparo con si el tiempo paso lo suficiente para volver a spawnear otro
-        if (Time.time >= powerUpNextSpawnTime)
+        powerUpSpawnRate = powerUpMinSpawnTime;
+    }
+
+    private void Update()
+    {
+        powerUpSpawnTimer += Time.deltaTime;
+
+        // Spawneo un power up después de un tiempo
+        if (powerUpSpawnTimer >= powerUpSpawnRate)
         {
-            spawnRate = Random.Range(15f, 30f);
-            powerUpRrandomPositionY = Random.Range(-1f,-2.90f);
+            powerUpRrandomPositionY = Random.Range(powerUpMinSpawnRange, powerUpMaxSpawnRange);
             SpawnPowerUp();
+
+            powerUpSpawnTimer -= powerUpSpawnRate;
+            powerUpSpawnRate = Random.Range(powerUpMinSpawnTime, powerUpMaxSpawnTime);
         }
     }
 
     // Funcion para spawnear los power ups
     private void SpawnPowerUp()
     {
-        // Al tiempo que transcurrio le sumo el ratio de spawn
-        powerUpNextSpawnTime = Time.time + spawnRate;
-
         // Tomo un objeto de mi array
         int idPowerUP = Random.Range(0, powerUps.Length);
         GameObject powerUp = powerUps[idPowerUP];

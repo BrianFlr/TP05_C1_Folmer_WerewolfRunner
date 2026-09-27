@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 482563340769471584}
   m_Layer: 8
   m_Name: Toad Visual
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 4943440363963514429}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.256, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 3996560268803739759}
   m_Layer: 8
   m_Name: Obstacle Mutant Toad
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -195,8 +195,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.018669402, y: -0.2772986}
-  m_Size: {x: 1.3350716, y: 1.0421987}
+  m_Offset: {x: -0.018669374, y: -0.042181227}
+  m_Size: {x: 1.3350718, y: 0.9521565}
   m_Direction: 1
 --- !u!50 &3996560268803739759
 Rigidbody2D:
@@ -213,7 +213,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 8039521187753310706}
   m_Layer: 8
   m_Name: Visual
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
