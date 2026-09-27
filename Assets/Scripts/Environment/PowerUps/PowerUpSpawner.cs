@@ -21,7 +21,7 @@ public class PowerUpSpawner : MonoBehaviour
         }
     }
 
-    // Funcion para spawnear los cuervos
+    // Funcion para spawnear los power ups
     private void SpawnPowerUp()
     {
         // Al tiempo que transcurrio le sumo el ratio de spawn

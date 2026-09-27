@@ -4,10 +4,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [SerializeField] GameplayDataSo data;
+    [SerializeField] PlayerDataSo playerData;
+    [SerializeField] GameplayDataSo gameplayData;
 
-    [SerializeField] private float displacementSpeed = 0f;
-    [SerializeField] private float crowDisplacementSpeed = 0f;
+    [SerializeField] private int playerHealth = 0;
+    private float displacementSpeed = 0f;
+    private float crowDisplacementSpeed = 0f;
     private float playerPoints = 0f;
     private float ratePlayerPoints = 0.4f;
     private float timerPlayerPoints = 0f;
@@ -18,7 +20,6 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -28,8 +29,9 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        displacementSpeed = data.displacementSpeed;
-        crowDisplacementSpeed = data.displacementSpeed * 1.1f;
+        displacementSpeed = gameplayData.displacementSpeed;
+        crowDisplacementSpeed = gameplayData.displacementSpeed * 1.2f;
+        playerHealth = playerData.health;
     }
 
     void Update()
@@ -59,8 +61,23 @@ public class GameManager : MonoBehaviour
         return playerPoints;
     }
 
+
     public float GetPowerUpTime()
     {
         return powerUpTime;
+    }
+
+
+    public int GetPlayerHealth()
+    {
+        return playerHealth;
+    }
+
+    public void SetPlayerHealth()
+    {
+        if (playerHealth < 3)
+        {
+            playerHealth++;
+        }
     }
 }
