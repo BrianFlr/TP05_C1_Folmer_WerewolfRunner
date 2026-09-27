@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] PlayerDataSo playerData;
     [SerializeField] GameplayDataSo gameplayData;
+    private int layerEnemies;
 
     [SerializeField] private int playerHealth = 0;
     private float displacementSpeed = 0f;
@@ -27,19 +28,29 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Start()
+    private void Start()
     {
         displacementSpeed = gameplayData.displacementSpeed;
         crowDisplacementSpeed = gameplayData.displacementSpeed * 1.2f;
         playerHealth = playerData.health;
+        layerEnemies = LayerMask.NameToLayer("Enemies");
     }
 
-    void Update()
+    private void Update()
     {
+        // Sumo continuamente puntos al jugador
         if (Time.time > timerPlayerPoints)
         {
             playerPoints++;
             timerPlayerPoints = Time.time + ratePlayerPoints;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == layerEnemies)
+        {
+            RemovePlayerHealth();
         }
     }
 
@@ -73,11 +84,16 @@ public class GameManager : MonoBehaviour
         return playerHealth;
     }
 
-    public void SetPlayerHealth()
+    public void AddPlayerHealth()
     {
         if (playerHealth < 3)
         {
             playerHealth++;
         }
+    }
+
+    public void RemovePlayerHealth()
+    {
+        playerHealth--;
     }
 }

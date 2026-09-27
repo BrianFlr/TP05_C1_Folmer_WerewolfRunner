@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2532968781224327075}
   - component: {fileID: 649054651533181678}
   - component: {fileID: -3973810907459161310}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Obstacle FireSkull
   m_TagString: Untagged
   m_Icon: {fileID: 0}

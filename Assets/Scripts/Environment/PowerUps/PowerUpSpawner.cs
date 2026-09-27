@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Pool;
 
 public class PowerUpSpawner : MonoBehaviour
 {
@@ -16,7 +15,7 @@ public class PowerUpSpawner : MonoBehaviour
         if (Time.time >= powerUpNextSpawnTime)
         {
             spawnRate = Random.Range(15f, 30f);
-            powerUpRrandomPositionY = Random.Range(-1,0.8f);
+            powerUpRrandomPositionY = Random.Range(-1f,-2.90f);
             SpawnPowerUp();
         }
     }

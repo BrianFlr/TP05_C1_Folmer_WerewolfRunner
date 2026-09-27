@@ -9,15 +9,14 @@ public class PlayerPowerUp : MonoBehaviour
     {
         if (powerUp.gameObject == lifePowerUp)
         {
-            GameManager.Instance.SetPlayerHealth();
+            GameManager.Instance.AddPlayerHealth();
             powerUp.gameObject.SetActive(false);
         }
 
         if (powerUp.gameObject == shieldPowerUp)
         {
-            GameManager.Instance.SetPlayerHealth();
+            GameManager.Instance.AddPlayerHealth();
             powerUp.gameObject.SetActive(false);
         }
-
     }
 }
