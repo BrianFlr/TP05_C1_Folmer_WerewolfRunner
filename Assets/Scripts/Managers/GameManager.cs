@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private float playerPoints = 0f;
     private float ratePlayerPoints = 0.4f;
     private float timerPlayerPoints = 0f;
+    private float powerUpTime = 0f;
 
     private void Awake()
     {
@@ -56,5 +57,10 @@ public class GameManager : MonoBehaviour
     public float GetPlayerPoints()
     {
         return playerPoints;
+    }
+
+    public float GetPowerUpTime()
+    {
+        return powerUpTime;
     }
 }

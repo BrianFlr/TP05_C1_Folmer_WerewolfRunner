@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7906403974888809442}
-  - component: {fileID: 5233802613591743918}
   m_Layer: 5
   m_Name: Image Heart_0
   m_TagString: Untagged
@@ -37,14 +36,6 @@ RectTransform:
   m_AnchoredPosition: {x: 32.856117, y: -30}
   m_SizeDelta: {x: 65.712234, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &5233802613591743918
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3040768504064241466}
-  m_CullTransparentMesh: 1
 --- !u!1 &7186804771610866618
 GameObject:
   m_ObjectHideFlags: 0
