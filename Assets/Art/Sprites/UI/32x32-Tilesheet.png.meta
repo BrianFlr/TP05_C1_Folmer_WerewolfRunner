@@ -353,12 +353,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 210
-        y: 274
+        y: 273
         width: 60
         height: 60
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 11, y: 11, z: 11, w: 11}
+      border: {x: 14, y: 15, z: 14, w: 13}
       customData: 
       outline: []
       physicsShape: []
@@ -380,7 +380,7 @@ TextureImporter:
         height: 60
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 10, y: 10, z: 10, w: 10}
+      border: {x: 14, y: 14, z: 14, w: 14}
       customData: 
       outline: []
       physicsShape: []
@@ -446,7 +446,7 @@ TextureImporter:
         height: 32
       alignment: 9
       pivot: {x: 0.49675655, y: 0.4383812}
-      border: {x: 8, y: 8, z: 8, w: 12}
+      border: {x: 16, y: 8, z: 16, w: 12}
       customData: 
       outline: []
       physicsShape: []
@@ -572,13 +572,13 @@ TextureImporter:
       name: 32x32-Tilesheet_11
       rect:
         serializedVersion: 2
-        x: 196
-        y: 201
-        width: 88
-        height: 17
+        x: 197
+        y: 202
+        width: 86
+        height: 16
       alignment: 9
       pivot: {x: 0.49999982, y: 0.2975509}
-      border: {x: 9, y: 3, z: 9, w: 10}
+      border: {x: 43, y: 3, z: 42, w: 11}
       customData: 
       outline: []
       physicsShape: []
@@ -798,7 +798,7 @@ TextureImporter:
         height: 23
       alignment: 9
       pivot: {x: 0.49588394, y: 0.49100858}
-      border: {x: 7, y: 6, z: 8, w: 14}
+      border: {x: 10, y: 5, z: 10, w: 13}
       customData: 
       outline: []
       physicsShape: []
@@ -814,13 +814,13 @@ TextureImporter:
       name: 32x32-Tilesheet_29
       rect:
         serializedVersion: 2
-        x: 101
-        y: 139
-        width: 86
-        height: 9
+        x: 102
+        y: 140
+        width: 84
+        height: 7
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 14, y: 3, z: 14, w: 3}
       customData: 
       outline: []
       physicsShape: []
@@ -858,10 +858,10 @@ TextureImporter:
       name: 32x32-Tilesheet_32
       rect:
         serializedVersion: 2
-        x: 34
-        y: 109
-        width: 29
-        height: 8
+        x: 35
+        y: 110
+        width: 27
+        height: 6
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1106,7 +1106,7 @@ TextureImporter:
         height: 95
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 16, y: 15, z: 16, w: 16}
+      border: {x: 24, y: 23, z: 24, w: 24}
       customData: 
       outline: []
       physicsShape: []
@@ -1128,7 +1128,7 @@ TextureImporter:
         height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 9, y: 1, z: 8, w: 2}
+      border: {x: 9, y: 2, z: 8, w: 2}
       customData: 
       outline: []
       physicsShape: []
@@ -1282,7 +1282,7 @@ TextureImporter:
         height: 27
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 12, y: 3, z: 9, w: 12}
+      border: {x: 19, y: 8, z: 19, w: 16}
       customData: 
       outline: []
       physicsShape: []
