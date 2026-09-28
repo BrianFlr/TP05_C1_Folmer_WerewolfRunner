@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class AudioManagerUi : MonoBehaviour
+public class UiAudioManager : MonoBehaviour
 {
-    public static AudioManagerUi Instance;
+    public static UiAudioManager Instance;
 
     private AudioSource audioSource;
 

@@ -1,22 +1,14 @@
-using System.Collections;
 using UnityEngine;
 
-public class PlayerPowerUp : MonoBehaviour
+public class PlayerPowerUpHandle : MonoBehaviour
 {
     [SerializeField] GameObject lifePowerUp;
     [SerializeField] GameObject shieldPowerUp;
 
-    private int playerLayer = 0;
-    private int enemiesLayer = 0;
-    public float damageInvulnerabilityTime = 1f;
     public float powerUpInvulnerabilityTime = 6f;
 
     private void Start()
     {
-        // Tomo el id de cada layer
-        playerLayer = LayerMask.NameToLayer("Player");
-        enemiesLayer = LayerMask.NameToLayer("Enemies");
-
         // Le paso el tiempo que durara mi power up a GameManager
         GameManager.Instance.SetPowerUpDefaultTime(powerUpInvulnerabilityTime);
     }

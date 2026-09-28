@@ -41,7 +41,7 @@ public class UiMainMenu : MonoBehaviour
     // Eventos de botones
     private void OnStartClicked()
     {
-        AudioManagerUi.Instance.PlayButtonSound();
+        UiAudioManager.Instance.PlayButtonSound();
 
         // Cargo la escena de juego
         SceneManager.LoadScene("Gameplay");
@@ -49,7 +49,7 @@ public class UiMainMenu : MonoBehaviour
 
     private void OnSettingsClicked()
     {
-        AudioManagerUi.Instance.PlayButtonSound();
+        UiAudioManager.Instance.PlayButtonSound();
 
         // Activo el canvas settings
         settingsCanvas.SetActive(true);
@@ -57,7 +57,7 @@ public class UiMainMenu : MonoBehaviour
 
     private void OnCreditsClicked()
     {
-        AudioManagerUi.Instance.PlayButtonSound();
+        UiAudioManager.Instance.PlayButtonSound();
 
         // Activo el canvas credits
         creditsCanvas.SetActive(true);
@@ -65,7 +65,7 @@ public class UiMainMenu : MonoBehaviour
 
     private void OnExitClicked()
     {
-        AudioManagerUi.Instance.PlayButtonSound();
+        UiAudioManager.Instance.PlayButtonSound();
 
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
