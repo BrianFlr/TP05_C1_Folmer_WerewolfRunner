@@ -8,6 +8,7 @@ public class UiPauseMenu : MonoBehaviour
     [SerializeField] private GameObject pauseCanvas;
     [SerializeField] private GameObject settingsCanvas;
     [SerializeField] private GameObject creditsCanvas;
+    [SerializeField] private GameObject gameOverCanvas;
 
     [Header("Buttons")]
     [SerializeField] private Button btnContinue;
@@ -28,7 +29,7 @@ public class UiPauseMenu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) // Leo el input de la tecla para pausa
+        if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) && !gameOverCanvas.activeSelf) // Leo el input de la tecla para pausa
         {
             if (settingsCanvas.activeSelf || creditsCanvas.activeSelf) // Si esta activo otro menu 
             {

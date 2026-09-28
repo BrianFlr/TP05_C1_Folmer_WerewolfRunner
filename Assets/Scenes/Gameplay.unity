@@ -566,6 +566,7 @@ MonoBehaviour:
   skullObstacle: {fileID: 8455950005645277200, guid: ac4b3cebf49273b4eb826ad9b3e61571, type: 3}
   toadObstacle: {fileID: 6269658804845281611, guid: 1e7372c913f235d46a65e14093976e6a, type: 3}
   playerHealth: 0
+  powerUpTimer: 0
 --- !u!4 &134484756
 Transform:
   m_ObjectHideFlags: 0
@@ -1181,7 +1182,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &315048766
 RectTransform:
@@ -1568,6 +1569,7 @@ MonoBehaviour:
   pauseCanvas: {fileID: 441272614}
   settingsCanvas: {fileID: 1954236191}
   creditsCanvas: {fileID: 2056604793}
+  gameOverCanvas: {fileID: 257778668}
   btnContinue: {fileID: 1897427282}
   btnSettings: {fileID: 1846864829}
   btnCredits: {fileID: 731533876}
@@ -6546,8 +6548,8 @@ SceneRoots:
   - {fileID: 1633087163}
   - {fileID: 1123310100}
   - {fileID: 1214857534}
+  - {fileID: 315048766}
   - {fileID: 482797547}
   - {fileID: 624261448}
   - {fileID: 1490144331}
-  - {fileID: 315048766}
   - {fileID: 1074083519}

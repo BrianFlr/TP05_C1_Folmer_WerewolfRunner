@@ -43,12 +43,6 @@ public class UiMainMenu : MonoBehaviour
     {
         AudioManagerUi.Instance.PlayButtonSound();
 
-        //// Vuelvo a correr el contador de tiempo del limite para anotar
-        //if (GameManager.Instance != null)
-        //{
-        //    GameManager.Instance.ResetTimerOffState();
-        //}
-
         // Cargo la escena de juego
         SceneManager.LoadScene("Gameplay");
     }

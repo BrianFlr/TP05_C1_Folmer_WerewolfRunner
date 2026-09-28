@@ -16,20 +16,24 @@ public class GameManager : MonoBehaviour
 
     private float displacementSpeed = 0f;
     private float crowDisplacementSpeed = 0f;
-
+    private float crowSpeedMultiplier = 1.2f;
+    private float boosterDisplacementSpeed = 0.05f;
+    private float maxDisplacementSpeed = 10f;
+    private float boostSpeedTimer = 0f;
+    private float rateBoostSpeed = 3f;
+    
     [SerializeField] private int playerHealth = 0;
     [SerializeField] private float powerUpTimer = 0f;
     private float powerUpDefaultTime = 0f;
     private bool isShieldPowerUp = false;
 
     private float playerPoints = 0f;
-    private float timerPlayerPoints = 0f;
+    private float playerPointsTimer = 0f;
     private float ratePlayerPoints = 0.4f;
 
     private bool isDamage = false;
     private float noDamageTimer = 0f;
     private float noDamageDefaultTime = 1.5f;
-
 
     private bool isGameOver = false;
 
@@ -47,12 +51,13 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        // Tomo el id de cada layer
         playerLayer = LayerMask.NameToLayer("Player");
         enemiesLayer = LayerMask.NameToLayer("Enemies");
 
         displacementSpeed = gameplayData.displacementSpeed;
-        crowDisplacementSpeed = gameplayData.displacementSpeed * 1.2f;
+        crowDisplacementSpeed = gameplayData.displacementSpeed * crowSpeedMultiplier;
+        boosterDisplacementSpeed = gameplayData.boosterDisplacementSpeed;
+
         playerHealth = playerData.health;
         powerUpTimer = powerUpDefaultTime;
         noDamageTimer = noDamageDefaultTime;
@@ -60,23 +65,36 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        timerPlayerPoints += Time.deltaTime;
+        boostSpeedTimer += Time.deltaTime;
+        playerPointsTimer += Time.deltaTime;
 
-        // Sumo continuamente puntos al jugador
-        if (timerPlayerPoints >= ratePlayerPoints)
+        // Sumo continuamente puntos al jugador 
+        if (playerPointsTimer >= ratePlayerPoints)
         {
             playerPoints++;
-            timerPlayerPoints -= ratePlayerPoints;
+            playerPointsTimer -= ratePlayerPoints;
         }
 
+        // Aumento continuamente la velocidad de todos los objetos
+        if (boostSpeedTimer >= rateBoostSpeed)
+        {
+            displacementSpeed = Mathf.Clamp(displacementSpeed + boosterDisplacementSpeed, 0f, maxDisplacementSpeed);
+            crowDisplacementSpeed = Mathf.Clamp(crowDisplacementSpeed + boosterDisplacementSpeed, 0f, maxDisplacementSpeed * crowSpeedMultiplier);
+
+            boostSpeedTimer -= rateBoostSpeed;
+        }
+
+        // Condicion de game over
         if (playerHealth <= 0)
         {
             isGameOver = true;
+            playerHealth = playerData.health;
         }
     }
 
     private void FixedUpdate()
     {
+        // Si el jugador tomo un power up de escudo
         if (isShieldPowerUp)
         {
             Physics2D.IgnoreLayerCollision(playerLayer, enemiesLayer, true);
@@ -91,6 +109,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        // Si el jugador recibio daño
         if (isDamage)
         {
             // Ignoro las colisiones entre el layer del player y el de los enemigos
@@ -107,7 +126,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Get para llevar con facilidad la velocidad de dezplazamiento adonde se requiera
+    // Get para llevar con facilidad la velocidad de desplazamiento adonde se requiera
     public float GetDisplacementSpeed()
     {
         return displacementSpeed;
@@ -186,5 +205,11 @@ public class GameManager : MonoBehaviour
     public bool GetGameOverState()
     {
         return isGameOver;
-    } 
+    }
+
+    // Reset de la variable GameOver
+    public void ResetGameOverState()
+    {
+        isGameOver = false;
+    }
 }
