@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5045832882659567911}
   - component: {fileID: 7439456272186173128}
   m_Layer: 6
-  m_Name: Ground Visual
+  m_Name: GroundVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
