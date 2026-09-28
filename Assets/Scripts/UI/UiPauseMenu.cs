@@ -74,8 +74,6 @@ public class UiPauseMenu : MonoBehaviour
     {
         UiAudioManager.Instance.PlayButtonSound();
 
-        Debug.Log("click");
-
         // Quito el estado de pausa
         ResetPauseState();
 

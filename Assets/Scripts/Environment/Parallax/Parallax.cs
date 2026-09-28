@@ -1,17 +1,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Parallax : MonoBehaviour
+public partial class Parallax : MonoBehaviour
 {
-    [SerializeField] private float parallaxSpeed = 1f;
+    [SerializeField] private ParallaxBg bg;
+
+    [SerializeField] private float speed = 6f;
+    [SerializeField] private float finalSpeed = 0f;
+
     [SerializeField] private List<Transform> sprites = new List <Transform>();
+
+    private void Start()
+    {
+        // Defino la velocidad de desplazamiento a partir de la velocidad, dependiendo el fondo
+        switch (bg)
+        {
+            case ParallaxBg.MiddleBg:
+                {
+                    finalSpeed = speed * 0.5f;
+                }
+                break;
+            case ParallaxBg.BackBg:
+                {
+                    finalSpeed = speed * 0.25f;
+                }
+                break;
+            default:
+                {
+                    finalSpeed = speed;
+                }
+                break;
+        }
+    }
 
     private void Update()
     {
         // Hago mover cada sprite de mi lista hacia la izquierda
         for (int i = 0; i < sprites.Count; i++)
         {
-            sprites[i].position += Vector3.left * (parallaxSpeed * Time.deltaTime);
+            sprites[i].position += Vector3.left * (finalSpeed * Time.deltaTime);
         }
 
         // Teletransporto el sprite cuando pasa la posicion definida por la mitad de la escala en negativo
