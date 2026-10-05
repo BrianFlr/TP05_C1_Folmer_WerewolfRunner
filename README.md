@@ -4,14 +4,6 @@
 Hola!
 Este es mi segundo juego desarrollado en Unity. Es del tipo "Endless Runner".
 
-
-
-
-
-
-
-
-
 ## Descripción del Juego
 Encarna a un hombre lobo, ve sorteando obstáculos mientras avanzas a toda velocidad adentrándote cada vez más en el bosque.
 ## Reglas del Juego
@@ -75,9 +67,10 @@ Superpowers assets sound effects By MedicineStorm
 
 Universal, tracks by Adiutorium
 
-***UI SFX:***
+***SFX:***
 
 16 Button Clicks By Independent.nu
+Game Over - Bad chest SFX por Oiboo
 ## Enlaces
 **Itch.io:** [Werewolf Runner](https://snairx.itch.io/werewolf-runner)
 
